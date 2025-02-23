@@ -8,16 +8,17 @@
         /* Стилі для контейнера вкладок */
         .tabs {
             display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 10px;
+            flex-direction: row;
+            border-bottom: 2px solid #ccc;
         }
 
         .tab {
-            background-color: #f0f0f0;
             padding: 10px 20px;
             cursor: pointer;
             border: 1px solid #ccc;
             border-radius: 4px 4px 0 0;
+            background-color: #f0f0f0;
+            margin-right: 5px;
             transition: background-color 0.3s ease;
         }
 
@@ -25,17 +26,32 @@
             background-color: #ddd;
         }
 
-        /* Приховування контенту вкладок */
-        .tab-content {
+        /* Стилі для кнопок вкладок, що є radio-кнопками */
+        .tab-input {
             display: none;
         }
 
+        /* Вигляд вкладки при виборі */
+        .tab-input:checked + .tab {
+            background-color: #ccc;
+            border-bottom: 2px solid #007bff;
+        }
+
+        /* Контент вкладок */
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+            background-color: #f9f9f9;
+        }
+
         /* Відображення вкладки при виборі */
-        .tab:checked + .tab-content {
+        .tab-input:checked + .tab + .tab-content {
             display: block;
         }
 
-        /* Стилі для вкладок на мобільних */
+        /* Респонсивність для мобільних */
         @media (max-width: 768px) {
             .tabs {
                 flex-direction: column;
@@ -45,16 +61,6 @@
                 width: 100%;
                 margin-bottom: 5px;
             }
-        }
-
-        /* Стилі для кнопок вкладок, що є радио-кнопками */
-        .tab-input {
-            display: none;
-        }
-
-        .tab-input:checked + .tab {
-            background-color: #ccc;
-            border-bottom: 2px solid #007bff;
         }
     </style>
 </head>
@@ -72,13 +78,13 @@
         <label for="tab3" class="tab">Вкладка 3</label>
     </div>
 
-    <div class="tab-content" id="content1">
+    <div class="tab-content">
         <p>Контент вкладки 1: Це текст для першої вкладки.</p>
     </div>
-    <div class="tab-content" id="content2">
+    <div class="tab-content">
         <p>Контент вкладки 2: Це текст для другої вкладки.</p>
     </div>
-    <div class="tab-content" id="content3">
+    <div class="tab-content">
         <p>Контент вкладки 3: Це текст для третьої вкладки.</p>
     </div>
 
