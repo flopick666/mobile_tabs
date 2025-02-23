@@ -1,94 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Tabs Without JavaScript</title>
-    <style>
-        /* Стилі для контейнера вкладок */
-        .tabs {
-            display: flex;
-            flex-direction: row;
-            border-bottom: 2px solid #ccc;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion Tabs</title>
+    <link rel="stylesheet" href="tabs.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="tab-container full-height">
+      <input type="radio" id="tab-1" name="tabs" class="tab-actor" checked />
+      <label for="tab-1" class="tab-button">Lorem ipsum</label>
+      <section class="tab-content">
+        <div class="content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor
+          ante augue. Mauris euismod feugiat sapien, in cursus sapien laoreet a.
+          In elementum, felis id pellentesque pulvinar, lacus massa dictum
+          justo, in molestie purus magna ac arcu. Etiam orci tellus, facilisis
+          et tristique vitae, finibus eget odio. Nulla non libero cursus, semper
+          nisi in, rutrum urna. Etiam ultrices leo vel sagittis malesuada. Cras
+          sed bibendum lorem.
+        </div>
+      </section>
 
-        .tab {
-            padding: 10px 20px;
-            cursor: pointer;
-            border: 1px solid #ccc;
-            border-radius: 4px 4px 0 0;
-            background-color: #f0f0f0;
-            margin-right: 5px;
-            transition: background-color 0.3s ease;
-        }
+      <input type="radio" id="tab-2" name="tabs" class="tab-actor" />
+      <label for="tab-2" class="tab-button">Donec consequat</label>
+      <section class="tab-content">
+        <div class="content">
+          Donec consequat elit sed eros aliquet egestas. Ut nisl justo, commodo
+          in condimentum sed, vulputate eget orci. Pellentesque dolor elit,
+          varius in nulla at, scelerisque bibendum massa. Vestibulum ante ipsum
+          primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed
+          suscipit venenatis vehicula. Suspendisse ante nulla, hendrerit quis
+          sollicitudin eget, ultrices non ligula. Donec interdum tempus iaculis.
+          In posuere elit nec orci rutrum fermentum. Vivamus elementum magna sed
+          feugiat lacinia. Curabitur at pretium massa. Praesent finibus a tellus
+          nec facilisis. Nam lacus lacus, tincidunt a pharetra non, porttitor
+          congue leo. Nunc tincidunt sapien cursus sodales tincidunt. Integer
+          dignissim pellentesque sem, sed iaculis neque sollicitudin eu.
+        </div>
+      </section>
 
-        .tab:hover {
-            background-color: #ddd;
-        }
-
-        /* Стилі для кнопок вкладок, що є radio-кнопками */
-        .tab-input {
-            display: none;
-        }
-
-        /* Вигляд вкладки при виборі */
-        .tab-input:checked + .tab {
-            background-color: #ccc;
-            border-bottom: 2px solid #007bff;
-        }
-
-        /* Контент вкладок */
-        .tab-content {
-            display: none;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-top: none;
-            background-color: #f9f9f9;
-        }
-
-        /* Відображення вкладки при виборі */
-        #tab1:checked ~ .tab1,
-        #tab2:checked ~ .tab2,
-        #tab3:checked ~ .tab3 {
-            display: block;
-        }
-
-        /* Респонсивність для мобільних */
-        @media (max-width: 768px) {
-            .tabs {
-                flex-direction: column;
-            }
-
-            .tab {
-                width: 100%;
-                margin-bottom: 5px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="tabs">
-        <!-- Використовуємо radio-кнопки для вкладок -->
-        <input type="radio" id="tab1" name="tab" class="tab-input" checked>
-        <label for="tab1" class="tab">Вкладка 1</label>
-
-        <input type="radio" id="tab2" name="tab" class="tab-input">
-        <label for="tab2" class="tab">Вкладка 2</label>
-
-        <input type="radio" id="tab3" name="tab" class="tab-input">
-        <label for="tab3" class="tab">Вкладка 3</label>
+      <input type="radio" id="tab-3" name="tabs" class="tab-actor" />
+      <label for="tab-3" class="tab-button">In porta feugiat</label>
+      <section class="tab-content">
+        <div class="content">
+          In porta feugiat metus elementum tincidunt. Sed mattis mattis nisi, at
+          accumsan nisi auctor eu. Duis quis aliquet ligula. Morbi pulvinar
+          tristique dignissim. Etiam lorem felis, egestas a suscipit molestie,
+          feugiat in diam. Sed commodo turpis vel hendrerit accumsan. Maecenas
+          mattis dolor eu eros tincidunt lobortis. Donec semper mauris dui, vel
+          placerat mi interdum et. Duis eleifend dolor non nibh laoreet
+          tristique. Proin eu nunc nec turpis euismod molestie. Donec fringilla
+          tortor at sem tincidunt, sed euismod erat bibendum. Curabitur id est
+          urna. Class aptent taciti sociosqu ad litora torquent per conubia
+          nostra, per inceptos himenaeos. Etiam sollicitudin fringilla purus ac
+          placerat.
+        </div>
+      </section>
     </div>
-
-    <div class="tab-content tab1">
-        <p>Контент вкладки 1: Це текст для першої вкладки.</p>
-    </div>
-    <div class="tab-content tab2">
-        <p>Контент вкладки 2: Це текст для другої вкладки.</p>
-    </div>
-    <div class="tab-content tab3">
-        <p>Контент вкладки 3: Це текст для третьої вкладки.</p>
-    </div>
-
-</body>
+  </body>
 </html>
