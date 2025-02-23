@@ -47,7 +47,9 @@
         }
 
         /* Відображення вкладки при виборі */
-        .tab-input:checked + .tab + .tab-content {
+        #tab1:checked ~ .tab1,
+        #tab2:checked ~ .tab2,
+        #tab3:checked ~ .tab3 {
             display: block;
         }
 
@@ -78,13 +80,13 @@
         <label for="tab3" class="tab">Вкладка 3</label>
     </div>
 
-    <div class="tab-content">
+    <div class="tab-content tab1">
         <p>Контент вкладки 1: Це текст для першої вкладки.</p>
     </div>
-    <div class="tab-content">
+    <div class="tab-content tab2">
         <p>Контент вкладки 2: Це текст для другої вкладки.</p>
     </div>
-    <div class="tab-content">
+    <div class="tab-content tab3">
         <p>Контент вкладки 3: Це текст для третьої вкладки.</p>
     </div>
 
