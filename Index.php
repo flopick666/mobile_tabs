@@ -1,6 +1,13 @@
 <html>
-  <head> Code  </head>
+  <head> 
+    <title>   
+    Code
+      
+    </title>  
+  </head>
   <body>
-    123
+    <header>    hader </header>
+    BODY
+    <footer> footer </footer>
   </body>
 </html>
